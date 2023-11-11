@@ -62,7 +62,7 @@ export function SchoolCheckbox() {
             {values.length > 0 ? (
               values
             ) : (
-              <Input.Placeholder>Filter by department</Input.Placeholder>
+              <Input.Placeholder>Filter by college</Input.Placeholder>
             )}
 
             <Combobox.EventsTarget>

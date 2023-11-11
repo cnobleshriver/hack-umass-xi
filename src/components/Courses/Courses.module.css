@@ -1,18 +1,19 @@
 .container {
     display: flex;
-    height: calc(100vh - 64px); /* Adjust this value to match the height of your navbar */
+    height: calc(100vh - 64px);
 }
 
 .searchBox {
-    height: calc(100vh - 64px);
+    height: 100%;
     width: 25%;
     border: 1px solid #ccc;
 }
 
 .innerSearchBox {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    width: 100%;
     padding: 20px;
 }
 
@@ -30,10 +31,6 @@
     height: 18px;
 }
 
-.inputField{
-    margin-bottom: 30px;
-}
-
-.checkbox {
-    margin-bottom: 30px;
-}
+ .searchElement {
+    margin-bottom: 60px;
+} 
