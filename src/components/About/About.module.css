@@ -5,6 +5,8 @@
     background-image: url(https://www.umass.edu/sites/default/files/styles/16_9_1920x1080/public/2020-09/UMass%20Campus%20Vistam.jpg?h=c4bb3a06&itok=7DR_JPGA);
     background-size: cover;
     background-position: center;
+    width: 100%;
+    height: calc(100vh - 64px);
   
     @media (max-width: $mantine-breakpoint-xs) {
       padding-top: rem(80px);

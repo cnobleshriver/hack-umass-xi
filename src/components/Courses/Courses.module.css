@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    height: calc(100vh - 60px); /* Adjust this value to match the height of your navbar */
+    height: calc(100vh - 64px); /* Adjust this value to match the height of your navbar */
 }
 
 .searchBox {
