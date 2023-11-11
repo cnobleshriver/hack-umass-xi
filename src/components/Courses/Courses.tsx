@@ -30,6 +30,5 @@ export function Courses() {
                 <div>Avg Difficulty</div>
             </div>
         </div>
-
     );
 }

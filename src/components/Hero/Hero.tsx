@@ -10,9 +10,9 @@ export function Hero() {
 
       <div className={classes.inner}>
         <Title className={classes.title}>
-          Course reviews for {' '}
+          Course reviews for any class {' '}
           <Text component="span" inherit className={classes.highlight}>
-            any class
+            at UMass
           </Text>
         </Title>
 
