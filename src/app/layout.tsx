@@ -2,7 +2,7 @@ import "@mantine/core/styles.css";
 import React from "react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { theme } from "../../theme";
-import { HeaderMenu } from "../components/HeaderMenu/HeaderMenu";
+import { HeaderMenu } from "@/components/HeaderMenu/HeaderMenu";
 
 export const metadata = {
   title: "Mantine Next.js template",

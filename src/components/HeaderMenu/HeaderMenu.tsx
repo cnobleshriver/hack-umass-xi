@@ -10,7 +10,6 @@ const links = [
   { link: '/', label: 'Home' },
   { link: '/courses', label: 'Courses' },
   { link: '/about', label: 'About'},
-  { link: '/contact', label: 'Contact' },
 ];
 
 export function HeaderMenu() {
@@ -33,8 +32,8 @@ export function HeaderMenu() {
     <header className={classes.header}>
       <Container size="md">
         <div className={classes.inner}>
-          <Image src='/umass-logo.png' alt="UMass" width={60} height={49}/>
-            <Text size="sm">UMass Course Reviews</Text>
+          {/* <Image src='/umass-logo.png' alt="UMass" width={60} height={49}/> */}
+            <Text size="lg">UMass Course Reviews</Text>
           <Group gap={5} visibleFrom="sm">
             {items}
           </Group>
