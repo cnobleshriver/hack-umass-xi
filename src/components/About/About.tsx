@@ -28,7 +28,7 @@ export function About() {
         </Container>
 
         <div className={classes.controls}>
-          <Button className={classes.control} variant="white" size="lg">
+          <Button component='a' href='/courses' className={classes.control} variant="white" size="lg">
             Get started
           </Button>
         </div>
