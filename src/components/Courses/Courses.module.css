@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust this value to match the height of your navbar */
+}
+
+.searchBox {
+    height: calc(100vh - 64px);
+    width: 25%;
+    border: 1px solid #ccc;
+}
+
+.innerSearchBox {
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.courseCriteria {
+    height: 64px;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leftIcon {
+    width: 18px;
+    height: 18px;
+}
+
+.inputField{
+    margin-bottom: 30px;
+}
+
+.checkbox {
+    margin-bottom: 30px;
+}
