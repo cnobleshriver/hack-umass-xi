@@ -101,6 +101,14 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-2.0.1.tgz"
   "version" "2.0.1"
 
+"@mantine/code-highlight@7.2.1":
+  "integrity" "sha512-CTBSpMSxbnjSLSjcV65pwwmx3Hbl2eLrRGaMzuvSQYwXw7LlZ9xYVMGzndAw3PQkBQPyr5AzuRjdWJrL0kJZAw=="
+  "resolved" "https://registry.npmjs.org/@mantine/code-highlight/-/code-highlight-7.2.1.tgz"
+  "version" "7.2.1"
+  dependencies:
+    "clsx" "2.0.0"
+    "highlight.js" "^11.7.0"
+
 "@mantine/core@7.2.1":
   "integrity" "sha512-vB5nMip/8fm+/9V49C856AGWEGocNzks6+KO/ocz4EKgd665F663Bs8x6cvop2onbZyVxhX/5Zge93ndX4UNFA=="
   "resolved" "https://registry.npmjs.org/@mantine/core/-/core-7.2.1.tgz"
@@ -112,6 +120,13 @@
     "react-remove-scroll" "^2.5.6"
     "react-textarea-autosize" "8.5.3"
     "type-fest" "^3.13.1"
+
+"@mantine/ds@^7.2.1":
+  "integrity" "sha512-HG92bhi/dFVom3VgsDY2m2nbQkjHW2Hx8noAR5A6utJzcWNvmPsw7pwnqDuqltb9StCbt+ZlJ7uI7rFGeD5nVQ=="
+  "resolved" "https://registry.npmjs.org/@mantine/ds/-/ds-7.2.1.tgz"
+  "version" "7.2.1"
+  dependencies:
+    "clsx" "2.0.0"
 
 "@mantine/hooks@7.2.1":
   "integrity" "sha512-v7GKjVQ6SV6dQ+hrs6HDHB50UB+ZXS5hhGp1bo2k6QGF3wcndws+eghCFO5hjKIVSLYm2YoaZxwKiQmjsZBXfQ=="
@@ -167,6 +182,19 @@
   "version" "0.5.2"
   dependencies:
     "tslib" "^2.4.0"
+
+"@tabler/icons-react@^2.29.0":
+  "integrity" "sha512-C+dDOZowFbwI3LGQP0fdua+hOPkGkW7XeMcRXTSdEKc5fD75W6zRO5nXnWivIMRKsi/Y26EDmnQo15N8JX378w=="
+  "resolved" "https://registry.npmjs.org/@tabler/icons-react/-/icons-react-2.40.0.tgz"
+  "version" "2.40.0"
+  dependencies:
+    "@tabler/icons" "2.40.0"
+    "prop-types" "^15.7.2"
+
+"@tabler/icons@2.40.0":
+  "integrity" "sha512-VqKsBSX159cLFTnCzkCmGhZtSPJHNN0lM2sC4xe0HPOfPUnjiex7rDHDdut4oe4iKRecDDpwXwM9BcU6xCPlCg=="
+  "resolved" "https://registry.npmjs.org/@tabler/icons/-/icons-2.40.0.tgz"
+  "version" "2.40.0"
 
 "@types/json5@^0.0.29":
   "integrity" "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
@@ -1153,6 +1181,11 @@
   dependencies:
     "function-bind" "^1.1.2"
 
+"highlight.js@^11.7.0":
+  "integrity" "sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw=="
+  "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-11.9.0.tgz"
+  "version" "11.9.0"
+
 "ignore@^5.2.0":
   "integrity" "sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ=="
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz"
@@ -1825,7 +1858,7 @@
     "use-composed-ref" "^1.3.0"
     "use-latest" "^1.2.1"
 
-"react@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8.0", "react@18.2.0":
+"react@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.5.1 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
