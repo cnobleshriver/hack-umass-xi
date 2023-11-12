@@ -1,0 +1,52 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Review {
+  id          String    @default(cuid()) @id
+  title       String
+  content     String?
+  rating      Int       // Assume a rating out of 5
+  published   Boolean   @default(false)
+  course      Course?   @relation(fields: [courseId], references: [id])
+  courseId    String?
+  author      User?     @relation(fields: [authorId], references: [id])
+  authorId    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  @@map(name: "reviews")
+}
+
+model User {
+  id          String     @default(cuid()) @id
+  name        String?
+  email       String?    @unique
+  reviews     Review[]
+  @@map(name: "users")
+}
+
+model Course {
+  id          String    @default(cuid()) @id
+  code        String    // e.g., "COMPSCI 101"
+  title       String
+  description String?
+  department  Department? @relation(fields: [departmentId], references: [id])
+  departmentId String?
+  reviews     Review[]
+  @@map(name: "courses")
+}
+
+model Department {
+  id          String    @default(cuid()) @id
+  name        String
+  courses     Course[]
+  @@map(name: "departments")
+}

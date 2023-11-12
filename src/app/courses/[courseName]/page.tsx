@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { CourseReview } from '@/components/CourseReview/CourseReview';
 
 const CoursePage = () => {
   const pathname = usePathname();
@@ -18,7 +19,9 @@ const CoursePage = () => {
   const courseName = decodeURIComponent(pathSegment);
 
   return (
-    <div>Course Name: {courseName}</div>
+    <>
+      <CourseReview courseName={courseName} />
+    </>
   );
 };
 
