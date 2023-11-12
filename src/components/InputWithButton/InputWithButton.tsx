@@ -28,7 +28,7 @@ export function InputWithButton(props: TextInputProps) {
       leftSection={<IconSearch style={{ width: rem(24), height: rem(24) }} stroke={1.5} />}
       rightSection={
         <Link href={`/courses?search=${encodeURIComponent(searchText)}`}>
-          <ActionIcon size={40} radius="xl" variant="filled" onClick={handleButtonClick}>
+          <ActionIcon size={45} radius="xl" variant="filled" onClick={handleButtonClick}>
             <IconArrowRight style={{ width: rem(36), height: rem(36) }} stroke={1.5} />
           </ActionIcon>
         </Link>

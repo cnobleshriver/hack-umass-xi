@@ -165,7 +165,7 @@ export function TableReviews({ searchQuery: externalSearchQuery }) {
   const rows = data.map((course) => (
     <Table.Tr key={course.className}>
       <Table.Td>
-        <Anchor component="button" fz="sm">
+        <Anchor href={`/courses/${course.className}`} fz="sm" >
           {course.className}
         </Anchor>
       </Table.Td>

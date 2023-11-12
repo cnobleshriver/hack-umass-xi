@@ -6,7 +6,7 @@ import { Button } from '@mantine/core';
 import { SchoolCheckbox } from '@/components/SchoolCheckbox/SchoolCheckbox';
 import { ProfCheckbox } from '@/components/ProfCheckbox/ProfCheckbox';
 import { TableReviews } from '@/components/Table/TableReviews';
-import { useSearchParams } from 'next/navigation'; // Import useSearchParams
+import { useSearchParams } from 'next/navigation';
 
 const Courses = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,9 +16,7 @@ const Courses = () => {
   // Use useSearchParams to access the query parameters
   const searchParams = useSearchParams();
 
-  // Update the search query based on the URL query parameter
   useEffect(() => {
-    // Ensure that searchParams is defined
     if (searchParams) {
       const search = searchParams.get('search');
       if (search) {
