@@ -20,10 +20,23 @@
 .courseCriteria {
     height: 64px;
     flex-grow: 1;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.courseContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 75%;
+    /* border: 1px solid #ccc; */
+}
+
+.courseSection {
+    display: flex;
+    flex-direction: column;
 }
 
 .leftIcon {

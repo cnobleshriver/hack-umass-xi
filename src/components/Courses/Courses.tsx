@@ -3,6 +3,25 @@ import { Button, Select, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { SchoolCheckbox } from '../SchoolCheckbox/SchoolCheckbox';
 import { ProfCheckbox } from '../ProfCheckbox/ProfCheckbox';
+import CourseCard from '../CourseCard/CourseCard';
+
+const courses = [
+    {
+        id: 1,
+        name: 'Introduction to Programming',
+        numReviews: 120,
+        avgRating: 4.5,
+        avgDifficulty: 3.2,
+    },
+    {
+        id: 2,
+        name: 'Advanced Algorithms',
+        numReviews: 85,
+        avgRating: 4.2,
+        avgDifficulty: 4.7,
+    },
+    // Add more courses as needed
+];
 
 
 export function Courses() {
@@ -33,12 +52,27 @@ export function Courses() {
                     </Button>
                 </div>
             </div>
-            <div className={styles.courseCriteria}>
-                <div>Course Name</div>
-                <div>Num. Reviews</div>
-                <div>Avg Rating</div>
-                <div>Avg Difficulty</div>
+            <div className={styles.courseContainer}>
+                <div className={styles.courseSection}>
+
+                <div className={styles.courseCriteria}>
+                    <div>Course Name</div>
+                    <div>Num. Reviews</div>
+                    <div>Avg Rating</div>
+                    <div>Avg Difficulty</div>
+                </div>
+                {courses.map((course) => (
+                    <CourseCard
+                        id={course.id}
+                        name={course.name}
+                        numReviews={course.numReviews}
+                        avgRating={course.avgRating}
+                        avgDifficulty={course.avgDifficulty}
+                    />
+                ))}
+                </div>
             </div>
+
         </div>
     );
 }

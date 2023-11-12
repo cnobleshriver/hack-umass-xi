@@ -1,7 +1,13 @@
+import React, { useState } from 'react';
 import { TextInput, TextInputProps, ActionIcon, rem } from '@mantine/core';
 import { IconSearch, IconArrowRight } from '@tabler/icons-react';
 
 export function InputWithButton(props: TextInputProps) {
+  const [searchText, setSearchText] = useState('');
+
+  const handleInputChange = (event) => {
+     setSearchText(event.target.value);
+  };
 
   return (
     <TextInput
@@ -16,6 +22,8 @@ export function InputWithButton(props: TextInputProps) {
           <IconArrowRight style={{ width: rem(36), height: rem(36) }} stroke={1.5} />
         </ActionIcon>
       }
+      value={searchText}
+      onChange={handleInputChange}
       {...props}
     />
   );
