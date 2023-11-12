@@ -8,6 +8,7 @@ import { IconSearch } from '@tabler/icons-react';
 import { SchoolCheckbox } from '@/components/SchoolCheckbox/SchoolCheckbox';
 import { ProfCheckbox } from '@/components/ProfCheckbox/ProfCheckbox';
 import CourseCard from '@/components/CourseCard/CourseCard';
+import { TableReviews } from '@/components/Table/TableReviews';
 
 const classes = [
   {
@@ -62,7 +63,7 @@ const courses = () => {
         </div>
       </div>
       <div className={styles.courseContainer}>
-        <div className={styles.courseSection}>
+        {/* <div className={styles.courseSection}>
 
           <div className={styles.courseCriteria}>
             <div>Course Name</div>
@@ -79,7 +80,8 @@ const courses = () => {
               avgDifficulty={course.avgDifficulty}
             />
           ))}
-        </div>
+        </div> */}
+      <TableReviews />
       </div>
     </div>
   );

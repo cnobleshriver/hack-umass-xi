@@ -3,8 +3,8 @@ import { Title, Text, Container, Button, Overlay } from '@mantine/core';
 import classes from './about.module.css';
 
 const links = [
-    { link: '/courses', label: 'Courses' },
-  ];
+  { link: '/courses', label: 'Courses' },
+];
 
 const about = () => {
   return (
@@ -16,13 +16,9 @@ const about = () => {
           About{' '}
         </Title>
 
-        <Container size={640}>
+        <Container size={800}>
           <Text size="lg" className={classes.description}>
-            Umass Course Reviews was designed to better the course selection
-            experience for Umass students. It is an alternative to rate my professor
-            that exposes details of the course you are looking for regardless of the professor.
-            Your fellow classmates will leave reviews including the ins and outs of each course that
-            you cannot find anywhere else.
+            Umass Course Reviews was created to enhance the course selection process for students at the University of Massachusetts. Offering an innovative alternative to RateMyProfessor, this platform focuses on providing comprehensive details about courses, independent of the instructors. It features insightful reviews from your peers, covering aspects of each course that are unique and not available through other sources. This tool aims to give students a clearer, more informed understanding of their academic choices.
           </Text>
         </Container>
 
