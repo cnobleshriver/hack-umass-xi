@@ -135,9 +135,18 @@ export function TableReviews({ searchQuery: externalSearchQuery }) {
   const [searchQuery, setSearchQuery] = useState(externalSearchQuery || ''); // Initialize with external prop
 
   useEffect(() => {
-    // Update state when external prop changes
-    setSearchQuery(externalSearchQuery);
-  }, [externalSearchQuery]);
+    // Check if externalSearchQuery is defined and a string, else use an empty string
+    const effectiveSearchQuery = typeof externalSearchQuery === 'string' ? externalSearchQuery.toLowerCase() : '';
+
+    // Update internal search query based on external prop
+    setSearchQuery(effectiveSearchQuery);
+
+    // Filter data based on effective search query
+    const filteredData = initialData.filter(course =>
+      course.className.toLowerCase().includes(effectiveSearchQuery)
+    );
+    setData(filteredData);
+  }, [externalSearchQuery]); // Dependency on externalSearchQuery
 
   // ... rest of your component logic
 
