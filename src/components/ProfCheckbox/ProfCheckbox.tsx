@@ -5,11 +5,6 @@ import { useState } from 'react';
 
 const professors = [
   'Marius Minea',
-  'Professor 2',
-  'Professor 3',
-  'Professor 4',
-  'Professor 5',
-  'Professor 6',
 ];
 
 export function ProfCheckbox() {
