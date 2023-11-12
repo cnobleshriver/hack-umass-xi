@@ -132,31 +132,23 @@ export function TableReviews({ searchQuery: externalSearchQuery }) {
   const [data, setData] = useState(initialData);
   const [sortBy, setSortBy] = useState(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(externalSearchQuery || ''); // Initialize with external prop
+  const [searchQuery, setSearchQuery] = useState(externalSearchQuery || '');
 
   useEffect(() => {
-    // Check if externalSearchQuery is defined and a string, else use an empty string
     const effectiveSearchQuery = typeof externalSearchQuery === 'string' ? externalSearchQuery.toLowerCase() : '';
-
-    // Update internal search query based on external prop
     setSearchQuery(effectiveSearchQuery);
-
-    // Filter data based on effective search query
     const filteredData = initialData.filter(course =>
       course.className.toLowerCase().includes(effectiveSearchQuery)
     );
     setData(filteredData);
-  }, [externalSearchQuery]); // Dependency on externalSearchQuery
-
-  // ... rest of your component logic
+  }, [externalSearchQuery]); 
 
   const handleSearchChange = (event) => {
     const query = event.target.value;
-    setSearchQuery(query); // Update local state
+    setSearchQuery(query); 
     setData(filterData(query));
   };
 
-  // Updating sortData call to use initialData instead of data
   const setSorting = (field) => {
     const isReversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(isReversed);
