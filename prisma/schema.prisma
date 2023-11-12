@@ -16,6 +16,8 @@ model Review {
   course    Course?   @relation(fields: [courseId], references: [id])
   content   String?
   professor String
+  rating    Int
+  difficulty Int
   createdAt DateTime  @default(now()) @map(name: "created_at")
   published Boolean   @default(false)
   author    User?     @relation(fields: [authorId], references: [id])
