@@ -1,6 +1,6 @@
 'use client'
 
-import { Input, Text, Group, Anchor } from '@mantine/core';
+import { Input, Text, Group, Anchor, Button } from '@mantine/core';
 import classes from './AddReview.module.css';
 
 
@@ -44,6 +44,9 @@ export function AddReview() {
         </Text>
       </Group>
       <Input placeholder="Enter the Difficulty" id="your-password" mb={20}/>
+      <Button type="submit" variant="light" color="blue" fullWidth>
+        Submit
+      </Button>
     </div>
   );
 }
