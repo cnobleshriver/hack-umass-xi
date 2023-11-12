@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>
+        <MantineProvider forceColorScheme="dark">
           <HeaderMenu />
           {children}
         </MantineProvider>
