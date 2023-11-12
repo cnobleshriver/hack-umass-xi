@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './CourseCard.module.css';
 
 interface Props {
-    id: number;
+    key: number;
     name: string;
     numReviews: number;
     avgRating: number;
