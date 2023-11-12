@@ -1,9 +1,10 @@
 import { Hero } from '@/components/Hero/Hero';
-
+import Login from './login';
 export default function HomePage() {
   return (
-    <>
-    <Hero />
-    </>
+    <div>
+      <Login></Login>
+      <Hero />
+    </div>
   );
 }
