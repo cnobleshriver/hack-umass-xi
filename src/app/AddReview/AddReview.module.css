@@ -1,0 +1,9 @@
+
+.container {
+  max-width: 600px; /* Set a maximum width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+.reviewInput {
+  margin-bottom: 20px;
+}

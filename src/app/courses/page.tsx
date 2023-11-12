@@ -43,7 +43,7 @@ const Courses = () => {
               <Button color="blue">Apply Filters</Button>
             </div>
           </div>
-          <Button color="blue" size='compact-xl'>Add Review</Button>
+          <Button component='a' href='/AddReview' color="blue" size='compact-xl'>Add Review</Button>
         </div>
       </div>
       <div className={styles.courseContainer}>
