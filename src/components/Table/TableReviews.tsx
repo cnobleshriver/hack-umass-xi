@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Table, Progress, Anchor, Group, Text, Center, UnstyledButton } from '@mantine/core';
-import { IconSelector, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
+import { useState, useEffect } from 'react';
+import { Table, Progress, Anchor, Group, Text, Center, UnstyledButton, TextInput } from '@mantine/core';
+import { IconSelector, IconChevronDown, IconChevronUp, IconSearch } from '@tabler/icons-react';
 import classes from './TableReviews.module.css';
 
 const initialData = [
@@ -128,16 +128,37 @@ function sortData(data, sortBy, reverseSortDirection) {
   });
 }
 
-export function TableReviews() {
+export function TableReviews({ searchQuery: externalSearchQuery }) {
   const [data, setData] = useState(initialData);
   const [sortBy, setSortBy] = useState(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(externalSearchQuery || ''); // Initialize with external prop
 
+  useEffect(() => {
+    // Update state when external prop changes
+    setSearchQuery(externalSearchQuery);
+  }, [externalSearchQuery]);
+
+  // ... rest of your component logic
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query); // Update local state
+    setData(filterData(query));
+  };
+
+  // Updating sortData call to use initialData instead of data
   const setSorting = (field) => {
     const isReversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(isReversed);
     setSortBy(field);
-    setData(sortData(data, field, isReversed));
+    setData(sortData(initialData, field, isReversed));
+  };
+
+  const filterData = (query) => {
+    return initialData.filter(course =>
+      course.className.toLowerCase().includes(query.toLowerCase())
+    );
   };
 
   const rows = data.map((course) => (
@@ -172,42 +193,51 @@ export function TableReviews() {
   ));
 
   return (
-    <Table.ScrollContainer minWidth={800}>
-      <Table verticalSpacing="xs">
-        <Table.Thead>
-          <Table.Tr>
-            <Th
-              sorted={sortBy === 'className'}
-              reversed={reverseSortDirection}
-              onSort={() => setSorting('className')}
-            >
-              Class Name
-            </Th>
-            <Th
-              sorted={sortBy === 'numberOfReviews'}
-              reversed={reverseSortDirection}
-              onSort={() => setSorting('numberOfReviews')}
-            >
-              Number of Reviews
-            </Th>
-            <Th
-              sorted={sortBy === 'avgDifficultyRating'}
-              reversed={reverseSortDirection}
-              onSort={() => setSorting('avgDifficultyRating')}
-            >
-              Avg. Difficulty Rating
-            </Th>
-            <Th
-              sorted={sortBy === 'avgCourseRating'}
-              reversed={reverseSortDirection}
-              onSort={() => setSorting('avgCourseRating')}
-            >
-              Avg. Course Rating
-            </Th>
-          </Table.Tr>
-        </Table.Thead>
-        <Table.Tbody>{rows}</Table.Tbody>
-      </Table>
-    </Table.ScrollContainer>
+    <>
+      <TextInput
+        placeholder="Search by class name"
+        leftSection={<IconSearch className={classes.leftIcon} stroke={1.5} />}
+        value={searchQuery}
+        onChange={handleSearchChange}
+        mb="md"
+      />
+      <Table.ScrollContainer minWidth={800}>
+        <Table verticalSpacing="xs">
+          <Table.Thead>
+            <Table.Tr>
+              <Th
+                sorted={sortBy === 'className'}
+                reversed={reverseSortDirection}
+                onSort={() => setSorting('className')}
+              >
+                Class Name
+              </Th>
+              <Th
+                sorted={sortBy === 'numberOfReviews'}
+                reversed={reverseSortDirection}
+                onSort={() => setSorting('numberOfReviews')}
+              >
+                Number of Reviews
+              </Th>
+              <Th
+                sorted={sortBy === 'avgDifficultyRating'}
+                reversed={reverseSortDirection}
+                onSort={() => setSorting('avgDifficultyRating')}
+              >
+                Avg. Difficulty Rating
+              </Th>
+              <Th
+                sorted={sortBy === 'avgCourseRating'}
+                reversed={reverseSortDirection}
+                onSort={() => setSorting('avgCourseRating')}
+              >
+                Avg. Course Rating
+              </Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
+        </Table>
+      </Table.ScrollContainer>
+    </>
   );
 }

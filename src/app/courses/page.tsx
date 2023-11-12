@@ -1,90 +1,56 @@
 'use client'
 
-import React, { useState } from 'react';
-import { useSearchParams } from 'next/navigation'
+import React, { useState, useEffect } from 'react';
 import styles from './courses.module.css';
-import { Button, Select, TextInput } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
+import { Button } from '@mantine/core';
 import { SchoolCheckbox } from '@/components/SchoolCheckbox/SchoolCheckbox';
 import { ProfCheckbox } from '@/components/ProfCheckbox/ProfCheckbox';
-import CourseCard from '@/components/CourseCard/CourseCard';
 import { TableReviews } from '@/components/Table/TableReviews';
+import { useSearchParams } from 'next/navigation'; // Import useSearchParams
 
-const classes = [
-  {
-      key: 1,
-      name: 'Introduction to Programming',
-      numReviews: 120,
-      avgRating: 4.5,
-      avgDifficulty: 3.2,
-  },
-  {
-      key: 2,
-      name: 'Advanced Algorithms',
-      numReviews: 85,
-      avgRating: 4.2,
-      avgDifficulty: 4.7,
-  },
-  // Add more courses as needed
-];
+const Courses = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedSchools, setSelectedSchools] = useState([]);
+  const [selectedProfs, setSelectedProfs] = useState([]);
 
-const courses = () => {
-  const searchParams = useSearchParams()
-  const search = searchParams.get('search')
-  const [value, setValue] = useState('');
+  // Use useSearchParams to access the query parameters
+  const searchParams = useSearchParams();
+
+  // Update the search query based on the URL query parameter
+  useEffect(() => {
+    // Ensure that searchParams is defined
+    if (searchParams) {
+      const search = searchParams.get('search');
+      if (search) {
+        setSearchQuery(search);
+      }
+    }
+  }, [searchParams]);
 
   return (
     <div className={styles.container}>
       <div className={styles.searchBox}>
         <div className={styles.innerSearchBox}>
           <div>
-            <TextInput
-              className={styles.searchElement}
-              placeholder="Search"
-              value={value}
-              onChange={(event) => setValue(event.currentTarget.value)}
-              leftSection={<IconSearch className={styles.leftIcon} stroke={1.5} />}
-            />
+            {/* Removed the TextInput for search */}
             <div className={styles.searchElement}>
-              <SchoolCheckbox />
+              <SchoolCheckbox onSelect={setSelectedSchools} />
             </div>
             <div className={styles.searchElement}>
-              <ProfCheckbox />
+              <ProfCheckbox onSelect={setSelectedProfs} />
             </div>
             <div className={styles.searchElement}>
-              <Button color="blue">
-                Apply Filters
-              </Button>
+              <Button color="blue">Apply Filters</Button>
             </div>
           </div>
-          <Button color="blue" size='compact-xl'>
-            Add Review
-          </Button>
+          <Button color="blue" size='compact-xl'>Add Review</Button>
         </div>
       </div>
       <div className={styles.courseContainer}>
-        {/* <div className={styles.courseSection}>
-
-          <div className={styles.courseCriteria}>
-            <div>Course Name</div>
-            <div>Num. Reviews</div>
-            <div>Avg Rating</div>
-            <div>Avg Difficulty</div>
-          </div>
-          {classes.map((course) => (
-            <CourseCard
-              key={course.key}
-              name={course.name}
-              numReviews={course.numReviews}
-              avgRating={course.avgRating}
-              avgDifficulty={course.avgDifficulty}
-            />
-          ))}
-        </div> */}
-      <TableReviews />
+        <TableReviews searchQuery={searchQuery} />
       </div>
     </div>
   );
 };
 
-export default courses;
+export default Courses;

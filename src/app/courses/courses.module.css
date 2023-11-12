@@ -1,41 +1,25 @@
 .container {
     display: flex;
     height: calc(100vh - 64px);
+    background-color: #252525; /* Adding a light background */
 }
 
 .searchBox {
     height: 100%;
     width: 25%;
+    padding: 20px;
+    border-right: 1px solid #ddd; /* Adding a border for separation */
+    background-color: rgb(39, 39, 39); /* Adding a white background */
 }
 
 .innerSearchBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 20px;
+    justify-content: start; /* Align items to start instead of space-between */
 }
 
-.courseCriteria {
-    height: 64px;
-    flex-grow: 1;
-    /* border: 1px solid #ccc; */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.courseContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 75%;
-    /* border: 1px solid #ccc; */
-}
-
-.courseSection {
-    display: flex;
-    flex-direction: column;
+.searchElement {
+    margin-bottom: 20px; /* Reduced margin for tighter layout */
 }
 
 .leftIcon {
@@ -43,6 +27,10 @@
     height: 18px;
 }
 
- .searchElement {
-    margin-bottom: 60px;
-} 
+.courseContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 75%;
+    padding: 20px; /* Adding padding for spacing */
+}
