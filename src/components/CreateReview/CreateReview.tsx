@@ -4,20 +4,24 @@ const CreateReview = () => {
   const [courseId, setCourseId] = useState('');
   const [content, setContent] = useState('');
   const [professor, setProfessor] = useState('');
+  const [rating, setRating] = useState(0);
+  const [difficulty, setDifficulty] = useState(0);
   const [published, setPublished] = useState(false);
   const [authorId, setAuthorId] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     const review = {
       courseId,
       content,
       professor,
+      rating,
+      difficulty,
       published,
       authorId,
     };
-  
+
     const response = await fetch('/api/reviews', {
       method: 'POST',
       headers: {
@@ -25,7 +29,7 @@ const CreateReview = () => {
       },
       body: JSON.stringify(review),
     });
-  
+
     if (response.ok) {
       // Handle successful submission
     } else {
@@ -46,6 +50,14 @@ const CreateReview = () => {
       <label>
         Professor:
         <input type="text" value={professor} onChange={(e) => setProfessor(e.target.value)} />
+      </label>
+      <label>
+        Rating:
+        <input type="number" value={rating} onChange={(e) => setRating(parseInt(e.target.value))} />
+      </label>
+      <label>
+        Difficulty:
+        <input type="number" value={difficulty} onChange={(e) => setDifficulty(parseInt(e.target.value))} />
       </label>
       <label>
         Published:
