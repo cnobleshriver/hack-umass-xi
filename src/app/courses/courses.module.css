@@ -1,25 +1,25 @@
+
 .container {
     display: flex;
     height: calc(100vh - 64px);
-    background-color: #252525; /* Adding a light background */
+    background-color: #1A1B1E;
 }
 
 .searchBox {
     height: 100%;
     width: 25%;
     padding: 20px;
-    border-right: 1px solid #ddd; /* Adding a border for separation */
-    background-color: rgb(39, 39, 39); /* Adding a white background */
+    background-color: #1A1B1E;
 }
 
 .innerSearchBox {
     display: flex;
     flex-direction: column;
-    justify-content: start; /* Align items to start instead of space-between */
+    justify-content: start;
 }
 
 .searchElement {
-    margin-bottom: 20px; /* Reduced margin for tighter layout */
+    margin-bottom: 20px;
 }
 
 .leftIcon {
@@ -32,5 +32,5 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 75%;
-    padding: 20px; /* Adding padding for spacing */
+    padding: 20px;
 }
