@@ -65,7 +65,7 @@ const comments = [
             {feature.value}
           </Text>
         ) : (
-          <div style={{ width: '100px', height: '100px' }}>
+          <div className={classes.progressRing}>
             <RingProgress
               sections={[{ value: feature.value * 10, color: getRatingColor(feature.value, feature.isDifficulty) }]}
               label={
