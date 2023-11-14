@@ -61,7 +61,7 @@ const comments = [
           {feature.title}
         </Text>
         {feature.title === 'Number of reviews' ? (
-          <Text fz="xl" fw={700} ta="center" className={classes.cardValue}>
+          <Text fz="xl" fw={700} ta="left" className={classes.cardValue}>
             {feature.value}
           </Text>
         ) : (
